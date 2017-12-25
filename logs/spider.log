@@ -1,0 +1,159 @@
+INFO 2017-12-25 09:57:31 [scrapy.utils.log:log:log_scrapy_info:144] [None] Scrapy 1.4.0 started (bot: zhihu)
+INFO 2017-12-25 09:57:31 [scrapy.utils.log:log:log_scrapy_info:147] [None] Overridden settings: {'LOG_FORMAT': '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s', 'LOG_FILE': 'logs/spider.log', 'ROBOTSTXT_OBEY': True, 'NEWSPIDER_MODULE': 'zhihu.spiders', 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu'}
+INFO 2017-12-25 09:57:31 [scrapy.middleware:middleware:from_settings:53] [None] Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole']
+INFO 2017-12-25 09:57:31 [scrapy.middleware:middleware:from_settings:53] [None] Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO 2017-12-25 09:57:31 [scrapy.middleware:middleware:from_settings:53] [None] Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO 2017-12-25 09:57:31 [scrapy.middleware:middleware:from_settings:53] [None] Enabled item pipelines:
+['zhihu.pipelines.ShipPipeline']
+INFO 2017-12-25 09:57:31 [scrapy.core.engine:engine:open_spider:256] [None] Spider opened
+INFO 2017-12-25 09:57:31 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG 2017-12-25 09:57:31 [scrapy.extensions.telnet:telnet:start_listening:60] [None] Telnet console listening on 127.0.0.1:6023
+ERROR 2017-12-25 09:57:31 [scrapy.core.engine:engine:_next_request:133] [(<class 'ValueError'>, ValueError('Missing scheme in request url: h',), <traceback object at 0x7fa6d0a2f348>)] Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/spiders/__init__.py", line 83, in start_requests
+    yield Request(url, dont_filter=True)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/http/request/__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/http/request/__init__.py", line 58, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: h
+INFO 2017-12-25 09:57:31 [scrapy.core.engine:engine:close_spider:295] [None] Closing spider (finished)
+INFO 2017-12-25 09:57:31 [scrapy.statscollectors:statscollectors:close_spider:47] [None] Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 12, 25, 1, 57, 31, 490026),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 42569728,
+ 'memusage/startup': 42569728,
+ 'start_time': datetime.datetime(2017, 12, 25, 1, 57, 31, 479555)}
+INFO 2017-12-25 09:57:31 [scrapy.core.engine:engine:<lambda>:326] [None] Spider closed (finished)
+INFO 2017-12-25 09:57:37 [scrapy.utils.log:log:log_scrapy_info:144] [None] Scrapy 1.4.0 started (bot: zhihu)
+INFO 2017-12-25 09:57:37 [scrapy.utils.log:log:log_scrapy_info:147] [None] Overridden settings: {'LOG_FILE': 'logs/spider.log', 'LOG_FORMAT': '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s', 'SPIDER_MODULES': ['zhihu.spiders'], 'BOT_NAME': 'zhihu', 'NEWSPIDER_MODULE': 'zhihu.spiders', 'ROBOTSTXT_OBEY': True}
+INFO 2017-12-25 09:57:37 [scrapy.middleware:middleware:from_settings:53] [None] Enabled extensions:
+['scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats']
+INFO 2017-12-25 09:57:37 [scrapy.middleware:middleware:from_settings:53] [None] Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO 2017-12-25 09:57:37 [scrapy.middleware:middleware:from_settings:53] [None] Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO 2017-12-25 09:57:37 [scrapy.middleware:middleware:from_settings:53] [None] Enabled item pipelines:
+['zhihu.pipelines.ShipPipeline']
+INFO 2017-12-25 09:57:37 [scrapy.core.engine:engine:open_spider:256] [None] Spider opened
+INFO 2017-12-25 09:57:37 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG 2017-12-25 09:57:37 [scrapy.extensions.telnet:telnet:start_listening:60] [None] Telnet console listening on 127.0.0.1:6023
+ERROR 2017-12-25 09:57:37 [scrapy.core.engine:engine:_next_request:133] [(<class 'ValueError'>, ValueError('Missing scheme in request url: h',), <traceback object at 0x7fdc7aa6f408>)] Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/spiders/__init__.py", line 83, in start_requests
+    yield Request(url, dont_filter=True)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/http/request/__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/http/request/__init__.py", line 58, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: h
+INFO 2017-12-25 09:57:37 [scrapy.core.engine:engine:close_spider:295] [None] Closing spider (finished)
+INFO 2017-12-25 09:57:37 [scrapy.statscollectors:statscollectors:close_spider:47] [None] Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 12, 25, 1, 57, 37, 531672),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 42627072,
+ 'memusage/startup': 42627072,
+ 'start_time': datetime.datetime(2017, 12, 25, 1, 57, 37, 515207)}
+INFO 2017-12-25 09:57:37 [scrapy.core.engine:engine:<lambda>:326] [None] Spider closed (finished)
+INFO 2017-12-25 10:02:25 [scrapy.utils.log:log:log_scrapy_info:144] [None] Scrapy 1.4.0 started (bot: zhihu)
+INFO 2017-12-25 10:02:25 [scrapy.utils.log:log:log_scrapy_info:147] [None] Overridden settings: {'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'zhihu', 'LOG_FILE': 'logs/spider.log', 'LOG_FORMAT': '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s', 'SPIDER_MODULES': ['zhihu.spiders'], 'NEWSPIDER_MODULE': 'zhihu.spiders'}
+INFO 2017-12-25 10:02:25 [scrapy.middleware:middleware:from_settings:53] [None] Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logstats.LogStats']
+INFO 2017-12-25 10:02:25 [scrapy.middleware:middleware:from_settings:53] [None] Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+INFO 2017-12-25 10:02:25 [scrapy.middleware:middleware:from_settings:53] [None] Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+INFO 2017-12-25 10:02:25 [scrapy.middleware:middleware:from_settings:53] [None] Enabled item pipelines:
+['zhihu.pipelines.ShipPipeline']
+INFO 2017-12-25 10:02:25 [scrapy.core.engine:engine:open_spider:256] [None] Spider opened
+INFO 2017-12-25 10:02:25 [scrapy.extensions.logstats:logstats:log:48] [None] Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+DEBUG 2017-12-25 10:02:25 [scrapy.extensions.telnet:telnet:start_listening:60] [None] Telnet console listening on 127.0.0.1:6023
+ERROR 2017-12-25 10:02:25 [scrapy.core.engine:engine:_next_request:133] [(<class 'ValueError'>, ValueError('Missing scheme in request url: h',), <traceback object at 0x7f14850af3c8>)] Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/spiders/__init__.py", line 83, in start_requests
+    yield Request(url, dont_filter=True)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/http/request/__init__.py", line 25, in __init__
+    self._set_url(url)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/http/request/__init__.py", line 58, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: h
+INFO 2017-12-25 10:02:25 [scrapy.core.engine:engine:close_spider:295] [None] Closing spider (finished)
+INFO 2017-12-25 10:02:25 [scrapy.statscollectors:statscollectors:close_spider:47] [None] Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 12, 25, 2, 2, 25, 211045),
+ 'log_count/DEBUG': 1,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 42565632,
+ 'memusage/startup': 42565632,
+ 'start_time': datetime.datetime(2017, 12, 25, 2, 2, 25, 196250)}
+INFO 2017-12-25 10:02:25 [scrapy.core.engine:engine:<lambda>:326] [None] Spider closed (finished)
