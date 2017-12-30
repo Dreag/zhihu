@@ -16,42 +16,10 @@ NEWSPIDER_MODULE = 'zhihu.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'zhihu (+http://www.yourdomain.com)'
-USER_AGENT_LIST = ['Xaldon_WebSpider/2.0.b1',
-                    'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)',
-                    'Mozilla/5.0 (compatible; Speedy Spider; http://www.entireweb.com/about/search_tech/speedy_spider/)',
-                    'Speedy Spider (Entireweb; Beta/1.3; http://www.entireweb.com/about/search_tech/speedyspider/)',
-                    'Speedy Spider (Entireweb; Beta/1.2; http://www.entireweb.com/about/search_tech/speedyspider/)',
-                    'Speedy Spider (Entireweb; Beta/1.1; http://www.entireweb.com/about/search_tech/speedyspider/)',
-                    'Speedy Spider (Entireweb; Beta/1.0; http://www.entireweb.com/about/search_tech/speedyspider/)',
-                    'Speedy Spider (Beta/1.0; www.entireweb.com)',
-                    'Speedy Spider (http://www.entireweb.com/about/search_tech/speedy_spider/)',
-                    'Speedy Spider (http://www.entireweb.com/about/search_tech/speedyspider/)',
-                    'Speedy Spider (http://www.entireweb.com)',
-                    'Sosospider+(+http://help.soso.com/webspider.htm)',
-                    'sogou spider',
-                    'Nusearch Spider (www.nusearch.com)',
-                    'nuSearch Spider (compatible; MSIE 4.01; Windows NT)',
-                    'lmspider (lmspider@scansoft.com)',
-                    'lmspider lmspider@scansoft.com',
-                    'ldspider (http://code.google.com/p/ldspider/wiki/Robots)',
-                    'iaskspider/2.0(+http://iask.com/help/help_index.html)',
-                    'iaskspider',
-                    'hl_ftien_spider_v1.1',
-                    'hl_ftien_spider',
-                    'FyberSpider (+http://www.fybersearch.com/fyberspider.php)',
-                    'FyberSpider',
-                    'everyfeed-spider/2.0 (http://www.everyfeed.com)',
-                    'envolk[ITS]spider/1.6 (+http://www.envolk.com/envolkspider.html)',
-                    'envolk[ITS]spider/1.6 ( http://www.envolk.com/envolkspider.html)',
-                    'Baiduspider+(+http://www.baidu.com/search/spider_jp.html)',
-                    'Baiduspider+(+http://www.baidu.com/search/spider.htm)',
-                    'BaiDuSpider',
-                    'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0) AddSugarSpiderBot www.idealobserver.com',
-                   ]
+# USER_AGENT = 'zhihu (+http://www.zhihu.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -76,6 +44,12 @@ ROBOTSTXT_OBEY = True
 #   'Accept-Language': 'en',
 #}
 
+# Override the default request headers:
+DEFAULT_REQUEST_HEADERS = {
+  'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36',
+'authorization':'oauth c3cef7c66a1843f8b3a9e6a1e3160e20',
+}
+
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
@@ -88,11 +62,12 @@ ROBOTSTXT_OBEY = True
 #    'zhihu.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
-ANDOM_UA_TYPE = 'random'  # random  chrome
-DOWNLOADER_MIDDLEWARES = {
-    'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware': 543, 
-    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-}
+# ANDOM_UA_TYPE = 'random'  # random  chrome
+# DOWNLOADER_MIDDLEWARES = {
+#     'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware': 543, 
+#     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+# }
+
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -126,3 +101,5 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+LOG_FILE='logs/spider.log'
+LOG_FORMAT= '%(levelname)s %(asctime)s [%(name)s:%(module)s:%(funcName)s:%(lineno)s] [%(exc_info)s] %(message)s'
