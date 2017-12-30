@@ -15,7 +15,5 @@ class ZhihuItem(scrapy.Item):
 
 
 class ShipItem(scrapy.Item):
-	name = scrapy.Field()
-	user_link = scrapy.Field()
-	focus_number = scrapy.Field()
-		
+	url_token = scrapy.Field()
+	user_name = scrapy.Field()
