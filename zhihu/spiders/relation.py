@@ -38,9 +38,14 @@ class RelationSpider(scrapy.Spider):
 		item = ShipItem()
 		
 		followees_data = json.loads(response.text)
-		for user in followees_data['data']:
-			item['user_name'] = user['headline']
-			item['url_token'] = user['url_token']
+		for follower in followees_data['data']:
+			item['id'] = follower['id']
+			item['name'] = follower['name']
+			item['user_type'] = follower['user_type']
+			item['url_token'] = follower['url_token']
+			item['answer_count'] = follower['answer_count']
+			item['articles_count'] = follower['answer_count']
+			item['follower_count'] = follower['follower_count']
 			yield item
 		if "paging" in followees_data.keys() and followees_data["paging"].get("is_start") == False:
 			yield Request(url = followees_data["paging"].get("previous"),callback = self.followees_parse)
@@ -54,8 +59,13 @@ class RelationSpider(scrapy.Spider):
 		followers_data = json.loads(response.text)
 
 		for follower in followers_data['data']:
-			item['user_name'] = follower['headline']
+			item['id'] = follower['id']
+			item['name'] = follower['name']
+			item['user_type'] = follower['user_type']
 			item['url_token'] = follower['url_token']
+			item['answer_count'] = follower['answer_count']
+			item['articles_count'] = follower['answer_count']
+			item['follower_count'] = follower['follower_count']
 			print(item)
 			yield item
 
