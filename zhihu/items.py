@@ -15,5 +15,10 @@ class ZhihuItem(scrapy.Item):
 
 
 class ShipItem(scrapy.Item):
+	id = scrapy.Field()
+	name = scrapy.Field()
 	url_token = scrapy.Field()
-	user_name = scrapy.Field()
+	user_type = scrapy.Field()
+	answer_count = scrapy.Field()
+	articles_count = scrapy.Field()
+	follower_count = scrapy.Field()
