@@ -14,3 +14,7 @@
 ```python
 TypeError: to_bytes must receive a unicode, str or bytes object, got NoneType.
 ```
+
+#### 2018.1.2更新
+- 解决代理问题
+- 解决方法很简单粗暴，使用的大象代理，ip地址，或是自己爬取代理网站上的ip，在爬取的各种错误中，发现都是无所谓的错误，同时scrapy只支持http代理，将ip带上http协议之后进行请求，对爬取过程中遇到的所有错误（基本上都是因为代理请求造成的问题）全部直接抛出不做任何处理。
