@@ -63,10 +63,11 @@ DEFAULT_REQUEST_HEADERS = {
 #}
 
 # ANDOM_UA_TYPE = 'random'  # random  chrome
-# DOWNLOADER_MIDDLEWARES = {
-#     'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware': 543, 
-#     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
-# }
+DOWNLOADER_MIDDLEWARES = {
+    # 'zhihu.MidWare.user_agent_middlewares.RandomUserAgentMiddlware': 543, 
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'zhihu.middlewares.ProxyMiddleWare':125,
+}
 
 
 # Enable or disable extensions
@@ -79,6 +80,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'zhihu.pipelines.ShipPipeline': 300,
+   'zhihu.pipelines.DatabasePipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
